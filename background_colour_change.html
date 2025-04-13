@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS EXP 6</title>
+</head>
+<body id="mainbody">
+
+    <form name="color" action="" method="post">
+        Select color to change the Background Color?
+        <br>
+        <input name="color" type="radio" id="pink" value="background" onClick="changecolor('PINK')">PINK
+        <br>
+        <input name="color" type="radio" id="blue" value="background" onClick="changecolor('BLUE')">BLUE
+        <br>
+        <input name="color" type="radio" id="yellow" value="background" onClick="changecolor('YELLOW')">YELLOW
+        <br>
+        <input name="color" type="radio" id="green" value="background" onClick="changecolor('GREEN')">GREEN
+        <br>
+        <input name="color" type="radio" id="red" value="background" onClick="changecolor('RED')">RED
+        <br>
+        <input name="color" type="radio" id="purple" value="background" onClick="changecolor('PURPLE')">PURPLE
+        <br>
+        <input name="color" type="radio" id="black" value="background" onClick="changecolor('BLACK')">BLACK
+        <p id="demo"></p>
+    </form>
+
+    <script>
+        
+        function changecolor(value) {
+            try {
+                //let color;
+                switch(value) {
+                    case "PINK":
+                        color = "#FFC0CB";
+                        break;
+                    case "BLUE":
+                        color = "#0000FF";
+                        break;
+                    case "YELLOW":
+                        color = "#FFFF00";
+                        break;
+                    case "GREEN":
+                        color = "#008000";
+                        break;
+                    case "RED":
+                        color = "#FF0000";
+                        break;
+                    case "PURPLE":
+                        color = "#800080";
+                        break;
+                    case "BLACK":
+                        color = "#000000";
+                        break;
+                    default:
+                        color = "#FFFFFF"; 
+                }
+                
+                document.body.style.backgroundColor = color;
+
+            } catch (error) {
+                document.getElementById("demo").innerHTML = error.message;
+            }
+        }
+    </script>
+</body>
+</html>
